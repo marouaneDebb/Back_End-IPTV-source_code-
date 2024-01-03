@@ -33,7 +33,7 @@ public class FavoriteController {
     }
 
     @DeleteMapping("/delete/{movieID}/{username}")
-    public ResponseEntity<?> deleteFavoriteByMovieID(@PathVariable Long movieID,String username) {
+    public ResponseEntity<?> deleteFavoriteByMovieID(@PathVariable Long movieID,@PathVariable String username) {
         favoriteService.deleteFavoriteByMovieIDAndUsername(movieID,username);
         return new ResponseEntity<>(HttpStatus.OK);
     }
